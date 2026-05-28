@@ -69,10 +69,10 @@ vietnam-tourism-arimax/
 
 | Model | Overall | COVID | Recovery |
 |---|---|---|---|
-| SARIMA | 9.40 | 13.73 | 2.29 |
-| ARIMAX | 9.28 | 13.49 | 2.25 |
-| Random Forest | **8.43** ★ | **12.40** | **1.08** |
-| XGBoost | 8.46 | 12.54 | 1.18 |
+| SARIMA | 9.397 | 13.689 | 2.203 |
+| ARIMAX | 9.278 | 13.513 | 2.183 |
+| Random Forest | **8.431** ★ | **12.402** | **1.082** |
+| XGBoost | 8.465 | 12.450 | 1.106 |
 
 ### Walk-forward Rolling Forecast (RMSE, log scale)
 
@@ -87,9 +87,10 @@ vietnam-tourism-arimax/
 
 1. **ML wins on static RMSE** — Random Forest best overall, driven by lag/rolling features
 2. **ARIMAX wins on rolling forecast** — search_trends adds value when updated monthly
-3. **ARIMAX > SARIMA** — ΔAIC = −5.03, `log_search_trends` coefficient = 0.40 (p = 0.013)
+3. **ARIMAX > SARIMA** — ΔAIC = −0.076 (marginal), but `log_search_trends` coefficient = 0.40 (p = 0.013) and rolling RMSE improvement is substantial
 4. **COVID = structural break** — all models struggle in Mar–Apr 2020; rolling forecast recovers faster
-5. **Search trends as coincident indicator** — Granger causality not significant in normal periods (r = 0.13 pre-COVID), but significant in full series (r = 0.89) — primarily captures demand collapse during COVID
+5. **Search trends as coincident indicator** — Granger causality not significant in normal periods
+(r = −0.207 pre-COVID on log scale), but r = 0.89 across full series — driven by COVID collapse
 
 ---
 
